@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Css Grid</title>
+</head>
+<style>
+    :root{
+        --theme-background:rgb(218, 172, 172);
+        --theme-text:rgb(9, 9, 11);
+
+    }
+
+
+    
+      .child{
+        border: 3px solid red;
+        background-color: var(--theme-background);
+        background-color: bisque;
+        padding: 20px;
+        color: var(--theme-text);
+        padding: calc(--theme-text);
+        animation: myanimation 2s linear infinite;
+      }
+
+      .container{
+        display: grid;
+        /* grid-template-columns: 300px 400px 600px; */
+        /* grid-template-columns: 1fr 1fr 1fr;  */
+         gap: 20px; 
+        /* column-gap: 20px; */
+         grid-template-columns: repeat(4 , 1fr); 
+         grid-template-rows: (2, 400px); 
+        /* row-gap: 20px; */
+        background-color: brown;
+        /* height: 100vh; */
+        height: calc(100vh - 106px);
+      }
+      
+      body{
+        background-color: var(--theme-background);
+        margin: 0;
+      }
+
+      .navbar{
+        background-color: var(--theme-background);
+        border: 3px solid var(--theme-text);
+        height: 100px;
+
+      }
+      @keyframes myanimation {
+        0%{
+            transform: translateY(-50PX);
+
+        }
+        50%{
+            transform: translateY(50PX)
+            ;
+        }
+        100%{
+            transform: translateY(-50px);
+        }
+
+        
+      }
+
+
+
+</style>
+
+<body>
+
+    <nav class="navbar">
+
+    </nav>
+    <div class="container">
+        <div class="child">
+            <h1>Child 1</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum totam numquam nesciunt. Vel necessitatibus mollitia ipsam labore sit quasi deserunt?</p>
+        </div>
+        <div class="child">
+            <h1>Child 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ducimus!</p>
+            
+        </div>
+        <div class="child">
+            <h1>Child 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, illo!</p>
+        </div>
+
+        <div class="child">
+            <h1>Child 4</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, itaque?</p>
+        </div>
+        <div class="child">
+            <h1>Child 5</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, aut.</p>
+            
+        </div>
+        <div class="child">
+            <h1>Child 6</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, non.</p>
+        </div>
+    
+    </div>
+    
+    
+</body>
+</html>
